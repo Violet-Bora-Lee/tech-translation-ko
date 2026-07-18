@@ -44,6 +44,7 @@ RULES_DOC = {
     "KO-W011": "숫자와 단위 사이 공백 의심: IT 분야는 붙여 씀(KIGO)",
     "KO-W012": "의존 명사 '때' 붙여쓰기 의심: 보낼때 → 보낼 때",
     "KO-W013": "'중' 붙여쓰기 의심: 실행중 → 실행 중",
+    "KO-W014": "'것' 준말 붙여쓰기 의심: 있을겁니다 → 있을 겁니다",
 }
 
 # KIGO 자주 틀리는 말: (오류 정규식, 교정)
@@ -192,6 +193,12 @@ def check_content(lines):
 
         if re.search(r"(실행|진행|사용|로딩|연결|처리|작업|대기|접속|다운로드|업로드)중(?![요앙심])", text):
             add("KO-W013", no, raw)
+
+        # 관형형(받침 ㄹ) + '겁니다/겁니까'('것' 준말) 붙여쓰기
+        for m_geo in re.finditer(r"([가-힣])겁니(?=다|까)", text):
+            if (ord(m_geo.group(1)) - 0xAC00) % 28 == 8:
+                add("KO-W014", no, raw)
+                break
 
     return findings
 

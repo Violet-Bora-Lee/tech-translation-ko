@@ -51,6 +51,11 @@ parentheses). This document explains the why and the edge cases the linter can't
   `// this alert shows first` → `// 얼럿 창이 가장 먼저 뜹니다.`
   `// 20 lines of code working with elem` → `// 매개변수로 받아온 elem을 이용한 코드`
   (분량 정보보다 코드의 의도를 전달)
+- **주석의 수사 의문은 코드의 행동 서술로 바꾼다.** `// examine new nodes, is there
+  anything to highlight?` → `// 강조 표시할 새 노드가 있는지 검사합니다.` 추정형
+  주석도 다음 줄이 하는 일로 잇는다(`// 있을 수도 있습니다` → `// 있을 수 있으니
+  확인합니다`). 주석 속 지시 대상은 실제 식별자를 쓴다(`// 호출해야 합니다` →
+  `// takeRecords를 호출해야 합니다`).
 - **사용자에게 보이는 문자열은 번역한다.** `alert("promise done!")` → `alert("프라미스 성공!")`,
   `prompt("Which module to load?")` → `prompt("어떤 모듈을 불러오고 싶으세요?")`
 - **에러의 경계선**: 언어·플랫폼이 **생성하는** 에러 출력은 원문을 유지한다
