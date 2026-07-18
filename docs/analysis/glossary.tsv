@@ -1,0 +1,503 @@
+en	ko	note
+-	빼기	KIGO 스타일 가이드(기호 명칭)
+-	하이픈/붙임표	KIGO 스타일 가이드(기호 명칭)
+--	줄표	KIGO 스타일 가이드(기호 명칭)
+,	쉼표	KIGO 스타일 가이드(기호 명칭)
+;	세미콜론/쌍반점	KIGO 스타일 가이드(기호 명칭)
+:	콜론/쌍점	KIGO 스타일 가이드(기호 명칭)
+!	느낌표	KIGO 스타일 가이드(기호 명칭)
+?	물음표	KIGO 스타일 가이드(기호 명칭)
+?.	?.	'옵셔널 체이닝 문법, 물음표 점'이라고 읽음
+?.()	?.()	'옵셔널 체이닝 문법, 물음표 괄호'라고 읽음
+?.[]	?.[]	'옵셔널 체이닝 문법, 물음표 대괄호'라고 읽음
+.	마침표	KIGO 스타일 가이드(기호 명칭)
+……	줄임표	KIGO 스타일 가이드(기호 명칭)
+·	가운뎃점	KIGO 스타일 가이드(기호 명칭)
+'	작은따옴표/아포스트로피	KIGO 스타일 가이드(기호 명칭)
+""	큰따옴표	KIGO 스타일 가이드(기호 명칭)
+()	소괄호	KIGO 스타일 가이드(기호 명칭)
+[]	대괄호	KIGO 스타일 가이드(기호 명칭)
+{}	중괄호	KIGO 스타일 가이드(기호 명칭)
+*	별표	KIGO 스타일 가이드(기호 명칭)
+/	슬래시/빗금	KIGO 스타일 가이드(기호 명칭)
+\	역슬래시, 원	KIGO 스타일 가이드(기호 명칭)
+&	앰퍼샌드	KIGO 스타일 가이드(기호 명칭)
+#	파운드	KIGO 스타일 가이드(기호 명칭)
+%	백분율	KIGO 스타일 가이드(기호 명칭)
++	더하기	KIGO 스타일 가이드(기호 명칭)
+<=	부등호(이하/작거나 같음)	KIGO 스타일 가이드(기호 명칭)
+<>	꺽쇠괄호, 각괄호	KIGO 스타일 가이드(기호 명칭)
+=	등호(같음)	KIGO 스타일 가이드(기호 명칭)
+>	부등호(초과/보다 큼)	KIGO 스타일 가이드(기호 명칭)
+>=	부등호(이상/크거나 같음)	KIGO 스타일 가이드(기호 명칭)
+|	세로줄	KIGO 스타일 가이드(기호 명칭)
+||	이중 세로줄	KIGO 스타일 가이드(기호 명칭)
+~	물결표	KIGO 스타일 가이드(기호 명칭)
+$	달러	KIGO 스타일 가이드(기호 명칭)
+x	곱하기	KIGO 스타일 가이드(기호 명칭)
+accessor	접근자
+action	동작
+alert	alert 창, 얼럿 창, 얼럿 대화상자	프론트엔드 개발자를 위한 자바스크립트 프로그래밍 표기 참고
+alias	별칭
+ampersands	앰퍼샌드
+ancestor	조상	조상 노드
+animation	애니메이션
+appendix	부록
+application	애플리케이션
+architecture	아키텍처	국립국어원 외래어 표기법 참고
+argument	인수	함수 호출 시 실제 전달되는 값. 인자는 parameter(매개변수)
+array destructing	배열 구조 분해
+array initializer	배열 초기자	배열 이니셜라이저에서 변경
+array like (object)	유사 배열 (객체)
+arrow function	화살표 함수
+assertion	assertion	테스팅 자동화 개념으로 번역하지 않음
+assignment	할당	할당, 할당 연산자 등
+assignment expression	할당 표현식
+associative array	연관 배열	최초 등장 시 영문 병기
+async script	async 스크립트, 비동기 스크립트
+attribute	속성	property는 프로퍼티로 번역
+autocorrection	자동 고침
+babel	바벨
+background	백그라운드	스레드·프로세스 개념과 함께 쓰일 때 음차
+backreference	역참조	러닝 자바스크립트 17장 참고
+backslash	역슬래시
+base of recursion	재귀의 베이스	알고리즘 서적 다수가 채택
+best practice	모범 사례
+bind	바인드	최초 등장 시 병기 (bind)
+binding	바인딩	최초 등장 시 병기 (binding)
+block	블록
+body	본문	함수의 body는 함수 본문
+BOM	BOM	최초 등장 시 브라우저 객체 모델(Browser Object Model, BOM)
+boolean	불(린)값	번역 안함에서 불(린)값·불린형으로 변경. 문맥 따라 혼용
+boolean type	불린형, 불(린) 자료형, 불리언 자료형
+border	테두리
+bracket	대괄호 표기법
+bracket(s)	괄호
+breakpoint	중단점	디버깅
+browser	브라우저
+bubbling	버블링
+bug	버그
+build	빌드
+built-in	내장
+bundle	번들	번들링, 번들러(bundler)로 확장 가능
+byte	바이트
+cache(caching)	캐시(캐싱)
+call forwarding	번역 안함	적절한 번역어 없음
+callable	호출 가능한, 호출할 수 있는
+callback	콜백
+camel case	카멜 표기법	캐멀 케이스에서 통일
+capturing	캡처링
+carriage return	캐리지 리턴
+case	case문	case문, default문, switch문 표기
+chapter	챕터	'주제'에서 토의로 '챕터'로 변경
+character	글자	한 글자. 자바스크립트엔 글자 하나 저장용 자료형이 없음
+character code	문자 코드
+character encoding	문자 인코딩
+cheat sheet	치트 시트
+child node	자식 노드
+children	자식	자식 노드
+Chrome	Chrome	상품명 번역 안함
+class	클래스	문맥에 따라 '계층 구조', '종류'
+clause	절
+clone	복제, 복제하기
+closure	클로저
+collection	컬렉션
+colon	콜론, 쌍점
+comma	쉼표
+command	명령어
+comment	주석
+comment node	주석 노드	COMMENT 노드 혼용
+compile	컴파일
+computed property name	계산된 프로퍼티명
+computed style value	계산값
+configurable	구성 가능한
+confirm	컨펌 대화상자	최초 등장 시 컨펌(confirm) 대화상자 병기
+console	콘솔
+construct	문법 (구조), 구문	MS 용어집 참고로 구문 혼용
+constructor	생성자	번역 안함에서 생성자로 변경
+contents	콘텐츠
+context	컨텍스트	인사이드 자바스크립트 참고
+context menu	컨텍스트 메뉴	우클릭 메뉴
+contextual name	contextual name	번역 안함
+control flow	제어 흐름
+control point	조절점	베지어 곡선
+convention	컨벤션, 관습	문맥에 따라 선택
+core	코어	코어 자바스크립트(core JavaScript)
+credential	자격 증명
+cross-platform	크로스 플랫폼
+curly brace	중괄호
+curring	커링	최초 등장 시 커링(curring) 병기
+custom	커스텀, 사용자 지정	혼용 결정
+dash	대시(기호)	대시 기호(—)
+data	데이터
+data structure	자료 구조
+data type	자료형, 데이터 타입(혼용)
+dataset	dataset	번역 안함
+debounce	디바운스
+debugging	디버깅
+declaration	선언	definition은 정의
+declarative	선언적인
+decode	디코드	디코딩. 음차
+decorator	데코레이터	최초 등장 시 병기
+deep cloning	깊은 복사	객체 복제
+default	default문
+defer script	defer 스크립트, 지연 스크립트
+definition	정의	declaration은 선언
+deque	양단 대기열	double-ended queue
+derived class	하위 클래스	상위·하위 클래스(JAVA 서적 참고)
+descendant	후손	후손 노드
+descriptor	설명자
+destructuring assignment	구조 분해 할당	MDN
+diagram	다이어그램
+directive	지시자
+directory	디렉터리
+document	문서/document	document 객체를 나타낼 때는 번역 안함
+DOM	DOM	최초 등장 시 문서 객체 모델(Document Object Model, DOM). '돔'으로 읽음
+dot notation	점 표기법	대괄호 표기법과 대응
+Dotall	번역 안함	'닷올'로 읽음
+drag'n'drop	드래그 앤 드롭
+dynamic programming	다이내믹 프로그래밍	외래어 표기법 '다이내믹'
+dynamic typed	동적 타이핑
+Edge	Edge	상품명 번역 안함
+edge case	에지 케이스	corner case, boundary case 등
+editor	에디터, 편집기
+element	요소
+element node	요소 노드	Element 노드 혼용
+encode	인코드	인코딩. 음차
+engine	엔진
+entity	개체/엔티티	문맥에 따라
+enumerable	열거 가능한, 열거형
+environment	(호스트) 환경	자바스크립트 구동 환경이면 호스트 환경
+Environment Record	환경 레코드
+equality	동등 연산자	==
+error	에러
+error-first callback	오류 우선 콜백	러닝 자바스크립트 참고
+escape character	이스케이프 문자
+example	예시
+execution	실행
+execution context	실행 컨텍스트
+execution flow	실행 흐름
+execution stack	실행 스택
+executor	executor	최초 등장 시 executor(실행자, 실행 함수) 병기
+exotic object	특수 객체
+exponentiation	거듭제곱	거듭제곱 연산자
+export	내보내기	모듈 문서에서 동사로 쓰이면 '내보내다'
+expression	표현식	값으로 평가될 수 있는 문(statement)
+factory method	팩토리 메서드
+false	false	번역 안함
+falsy	falsy	최초 등장 글에서 falsy(거짓 같은 값) 병기, 이후 번역 안함
+feature	기능
+field	필드(필드값)
+Firefox	Firefox	상품명 번역 안함
+flag	플래그
+floating point number	부동소수점 숫자
+for instance:	예시:	완전한 문장 끝에는 콜론을 붙이지 않음
+form	폼
+formal argument	매개변수
+format	형식, 서식, 종류	문맥에 맞게
+fragments	fragments	번역 안함. '프래그먼츠'로 읽음
+frame	프레임
+fulfilled	성공, 처리, 이행	프라미스. 러닝 자바스크립트 참고
+function	함수
+Function Declaration	함수 선언(문)
+function expression	함수 표현식
+garbage collection	가비지 컬렉션
+generator	제너레이터
+generic	제네릭
+geometry	기하	좌표 관련 내장 메서드
+getter	getter	최초 등장 시 getter(획득자) 병기
+global	전역
+global symbol registry	전역 심볼 레지스트리
+Google	Google	회사명 번역 안함
+handler	핸들러
+handling	핸들링
+handshake	핸드셰이크
+header	헤더
+helper	헬퍼(helper)	번역 안하거나 음차
+hex color	16진수 색	MS terms
+hidden property	숨김 프로퍼티
+hierarchy	계층 구조
+hoisting	호이스팅
+Hook	Hook	번역 안함. '훅'으로 읽음
+horizontal ellipsis	생략 부호
+host	호스트
+HTML	HTML	번역 안함
+HTML attribute	HTML 속성
+HTTP authentication	HTTP 인증
+hyphens	하이픈
+identifier	식별자
+identity / strict equality	일치 연산자	===
+IIFE	즉시 실행 함수 표현식	번역 안함에서 변경
+import	가져오기	모듈 문서에서 동사로 쓰이면 '가져오다'
+imprinted	각인
+indent	들여쓰기
+index	인덱스
+inequality operator	부등 연산자	!=
+information hiding	정보 은닉
+inheritance	상속
+inline	인라인	인라인 스크립트 등
+inner	내부
+input field	입력 필드
+instance	인스턴스
+internal object	내부 객체
+Internet Explorer	Internet Explorer	상품명 번역 안함
+introduction	소개
+introspection	내부검사	객체 타입·프로퍼티 검사
+iterable	이터러블	최초 등장 시 반복 가능한(iterable, 이터러블) 객체. 이후 혼용, 되도록 '이터러블'
+iteration	반복, 이터레이션	반복(iteration, 이터레이션)
+iterator	iterator	번역 안함
+javascript	자바스크립트
+key	키
+label	레이블
+level	레벨
+lexical	렉시컬	최초 등장 시 렉시컬(lexical, 정적, 어휘적) 병기
+Lexical Environment	렉시컬 환경
+lifecycle	생명주기
+line	행, 줄, 라인
+line break	줄바꿈
+linked list	연결 리스트
+linter	linter
+literal	리터럴(표기법)
+local	지역, 로컬	지역 변수는 번역, local network·server는 로컬
+log	로그
+loop	반복문	for문, while문 또는 반복문
+Mac	Mac	운영체제명 번역 안함
+manual	매뉴얼
+margin	마진	padding·margin은 패딩·마진으로
+markup	마크업
+match	일치 항목	정규표현식
+mechanism	매커니즘
+megabyte	메가바이트
+member function	멤버 함수
+member variable	멤버 변수
+memory	메모리
+message	메시지
+method	메서드
+method shorthand	메서드 단축 구문
+microsecond	마이크로초
+Microsoft	Microsoft	회사명 번역 안함
+millisecond	밀리초
+minifier	압축기
+minus, subtraction	뺄셈	뺄셈 연산자
+Mixin	Mixin, 믹스인	원문·음차 혼용
+mock	모의
+modal	모달
+modal window	모달 창
+model	모델
+modern	모던(한)	'현대적인' 대신 모던(한)으로 통일
+module	모듈
+mount	마운트
+multiplication	곱셈	곱셈 연산자
+mutation observer	뮤테이션 옵저버
+named collection	기명 컬렉션	'명명된 컬렉션'에서 리뷰 후 변경
+named function expression	기명 함수 표현식
+namespace	네임스페이스
+native	네이티브
+nested function	중첩 함수
+network	네트워크
+network request	네트워크 요청
+newline character	줄 바꿈 문자
+NFE	명시된 함수표현 식
+node	노드
+non-configurable	구성 가능하지 않은
+non-identity / strict inequality	불일치 연산자	!==
+non-promise	프라미스가 아닌 객체
+non-standard	비표준
+note	노트/주의
+null	null	번역 안함
+nullish coalescing operator	nullish 병합 연산자	null 병합 연산자에서 수정(2021-12-22)
+number type	숫자, 숫자형
+object	객체
+object initializer	객체 초기자
+object wrapper	원시 래퍼 객체
+Opera	Opera	상품명 번역 안함
+operand	피연산자
+operation	연산
+operator	연산자
+optimize	최적화(하다)
+optional chaining	옵셔널 체이닝
+outer	외부
+Outer Lexical Environment	외부 렉시컬 환경
+overriding	오버라이딩
+P.S.	참고:	과제 하단 참고사항. 여러 개면 참고1: 참고2:
+package	패키지
+padding	패딩
+page reloading	새로 고침	'새로고침' 아닌 '새로 고침'으로 띄어씀
+pane	패널	개발자 도구 보조 창
+parallel computations	병렬 계산
+parameter	매개변수	함수에 전달되는 데이터를 가리키는 변수. 인수를 담음
+parent	부모	부모 노드
+parentheses	괄호
+parse-time	parse-time	번역 안함
+parsing	파싱
+part	대 단원
+partial (partials)	번역 안함	.partial 메서드 등
+partial application	부분 적용	함수형 프로그래밍 용어
+Pattern	패턴
+platform	플랫폼
+plus, addition	덧셈	덧셈 연산자
+pointer	포인터	마우스 포인터
+polyfill	폴리필
+portal	포탈
+practice	관습, 관례
+primitive type	원시형, 원시 타입
+primitive(s)	원시값
+process	프로세스
+production server	프로덕션 서버
+programmer	프로그래머
+promise	프라미스
+prompt	프롬프트 대화상자	최초 등장 시 한-영 병기
+property	프로퍼티	attribute는 속성
+proposal	제안	TC39의 proposal
+props	props	번역 안함. '프로퍼티즈'로 읽음
+prototype	프로토타입
+proxy	프락시
+pseudo-class	가상 클래스
+pseudo-element	의사 요소
+pseudocode	의사코드	최초 등장 시 (슈도코드, pseudocode) 병기
+quantifier	수량자
+question mark operator	물음표 연산자
+queue	대기열
+raising	올리기	호이스팅 부가설명
+real array	정규 배열
+reconciliation	재조정
+recursion	재귀
+recursive	재귀적인
+ref	ref	번역 안함. '레퍼런스'로 읽음
+reference	참고	링크 참고 문맥
+reference type	참조 타입
+regexp	정규식
+regular expression	정규 표현식
+reject	reject	프라미스 콜백 함수명이라 번역 안함
+rejected	실패, 거부됨	프라미스. 러닝 자바스크립트 참고
+rejection handler	rejection 핸들러
+remote server	원격 서버
+render	렌더링하다
+repository	리포지토리
+resolve	resolve/이행되다	함수명이면 번역 안함, 처리 상태면 '이행되다, 성공적으로 처리되다'
+resolved style value	결정값
+rest parameter	나머지 매개변수	팀 결정
+return	리턴	메서드 반환값 문맥
+return statement	리턴문
+return value	결괏값, 반환 값
+reuse	재사용
+root	루트
+root domain	루트 도메인
+Ruby	Ruby	언어명 번역 안함
+run-time, runtime	런타임
+Safari	Safari	상품명 번역 안함
+Same Origin Policy	동일 출처 정책
+schedule	스케줄
+scheduling	스케줄링	setTimeout·setInterval 작업 예약
+scope	스코프	전역 스코프, 블록 스코프, 함수 스코프
+script	스크립트
+scrollbar	스크롤바
+section	절
+seed	고정값
+semicolon	세미콜론, 쌍반점
+server-side	서버 사이드
+setter	setter	최초 등장 시 setter(설정자) 병기
+settled	결정, 처리된	프라미스
+shareware	셰어웨어	외래어 표기법 용례
+Short-circuit evaluation	단락 회로 평가
+shorthand	단축 구문
+sibling (node)	형제 (노드)
+side-effect	부작용	MS Language Portal 기반
+slash	슬래시	'빗금'이라 하지 않고 슬래시
+solution	해답, 답안
+spec	스펙	테스팅 자동화 문서 문맥
+spec, specification	명세(서)
+special character	특수 문자
+spread operator	전개 연산자
+spread syntax	전개 구문	한빛미디어 출판 가이드
+square bracket	대괄호
+stack	스택
+state	상태, state	React 문맥에선 번역 안함
+statement	문, 구문	단독으로 쓰일 땐 구문
+static	정적	정적 메서드 등
+Sticky Mode	번역 안함
+strict mode	엄격 모드	no strict mode는 비 엄격 모드
+string, string type	문자열, 문자형
+style	스타일
+stylesheet	스타일시트, stylesheet	병기
+subcall	서브 호출
+subdomain	서브 도메인
+substring	부분 문자열
+summary	요약
+surrogate pair	서로게이트 쌍	번역 안함에서 변경
+switch	switch문
+Symbol, symbol type	심볼, 심볼형
+syntactic sugar	편의 문법
+syntax	문법	논의로 확정
+synthetic event	합성 이벤트
+table	테이블	table 태그는 테이블, 그 외 '표' 혼용
+tag	태그
+tagged template	태그드 템플릿
+target	타깃
+task	과제
+template	템플릿
+template function	템플릿 함수
+ternary operator	삼항 연산자
+text field	텍스트 필드
+text node	텍스트 노드	TEXT 노드 혼용
+third party	서드 파티
+throttle	스로틀	외래어 표기법 기반
+throttling	스로틀링
+thumbnail	섬네일	'썸네일' 아닌 '섬네일'
+Tick	Tick	번역 안함. '틱'으로 읽음
+time zone	표준 시간대, 시간대
+timestamp	타임스탬프
+tip	팁
+toggle	토글	토글 버튼 등
+tool	툴
+transition	전환, 트랜지션	CSS transition은 트랜지션
+transpile	트랜스파일
+transpiler	트랜스파일러
+traversal	순회
+tree	트리	DOM 트리 등
+tree shaking	가지치기	번들링 최적화 과정
+trick	편법, 트릭
+trigger	트리거
+true	true	번역 안함
+truthy (value)	truthy	최초 등장 글에서 truthy(참 같은 값) 병기, 이후 번역 안함
+tutorial	튜토리얼
+type	타입, (자료)형	단독은 타입, 합성어는 'xx형'(문자형, 숫자형)
+UI	UI	번역 안함. '유아이'로 읽음
+undefined	undefined	번역 안함. '언디파인드'로 읽음
+underscore	밑줄
+unicode character	유니코드 문자
+unmount	마운트 해제
+upload	업로드
+url	url	번역 안함
+use case	유스 케이스
+user	사용자
+value(s)	값(값들)
+vector	벡터
+view	뷰
+viewport	뷰포트
+visitor	사용자
+Web	Web	대문자 Web은 번역 안함. '웹'으로 읽음
+web component	웹 컴포넌트
+webpack	웹팩
+webpage(s)	웹페이지
+WebSocket	웹소켓
+wheel	휠	마우스 휠
+Whoops!	에러 발생!	에러 생성자에 넘기는 문자열
+window	window/윈도우	window 객체는 번역 안함
+Windows	Windows	운영체제명 번역 안함
+wrapper	래퍼
+wrapping	래핑(하는)
+binary	이진, 바이너리
+connection	커넥션	네트워크 관련 글
+extension	익스텐션	외래어 표기법
+single-quoted	작은따옴표
+double-quoted	큰따옴표
+quotes	따옴표
+quoted strings	따옴표로 묶인 문자열
+opening quote	여는 따옴표
+closing quote	닫는 따옴표
+escape	이스케이프
+sequence	시퀀스
+cross-window	크로스 윈도우
+same-origin	동일 출처
+variant	변형

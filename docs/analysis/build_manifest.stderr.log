@@ -1,0 +1,15 @@
+[1/4] 현재 ko 저장소 .md 파일 목록 수집 중...
+  현재 .md 파일 수: 715
+[2/4] 대상 저자 이력 전수 스캔 중 (rename 추적 포함)...
+  이력상 target author가 건드린 경로(당시 파일명) 수: 486
+  [100/715] 1-js/02-first-steps/15-function-basics/2-rewrite-function-question-or/task.md
+  [200/715] 1-js/05-data-types/05-array-methods/3-filter-range-in-place/solution.md
+  [300/715] 1-js/06-advanced-functions/06-function-object/5-sum-many-brackets/solution.md
+  [400/715] 1-js/11-async/05-promise-api/article.md
+  [500/715] 2-ui/1-document/11-coordinates/1-find-point-coordinates/task.md
+  [600/715] 4-binary/01-arraybuffer-binary-arrays/01-concat/solution.md
+  [700/715] 9-regular-expressions/13-regexp-alternation/article.md
+  [715/715] todo.md
+[3/4] excluded(현재 미존재) 파일 목록 계산 중...
+  excluded 파일 수: 14
+[4/4] 결과 파일 기록 중...
