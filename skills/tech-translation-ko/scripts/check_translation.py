@@ -195,14 +195,23 @@ def check_glossary(lines, glossary_path):
             rows.append((cols[0].strip(), cols[1].strip()))
 
     text_all = "\n".join(l for _, _, l, _ in iter_prose_lines(lines))
+    # 한-영 병기 구간: 한글 바로 뒤 괄호 안의 원어는 이미 번역된 것이므로 검사 제외
+    annotated_spans = [m.span(1) for m in re.finditer(r"[가-힣»)]\(([^)]*)\)", text_all)]
+
+    def outside_annotation(m):
+        return not any(a <= m.start() and m.end() <= b for a, b in annotated_spans)
+
     for en, ko in rows:
         if ko in ("번역 안함", "번역안함") or en.lower() == ko.lower():
             continue
-        primary = re.split(r"[,/]", ko)[0].strip()
-        if not primary or not re.search(r"[가-힣]", primary):
+        alternatives = [a.strip() for a in re.split(r"[,/]", ko) if re.search(r"[가-힣]", a)]
+        if not alternatives:
             continue
-        # 원어가 산문에 단어로 등장하는데 표준 역어가 문서 전체에 없으면 의심
-        if re.search(rf"(?<![\w`]){re.escape(en)}(?![\w`])", text_all, re.IGNORECASE) and primary not in text_all:
+        # 원어가 산문에 단어로 등장하고(병기 괄호·제품명 제외) 등재 역어가 하나도 없으면 의심
+        matches = [m for m in re.finditer(
+            rf"(?<![\w`.]){re.escape(en)}(?![\w`]|\.\w)", text_all, re.IGNORECASE)
+            if outside_annotation(m)]
+        if matches and not any(alt in text_all for alt in alternatives):
             findings.append({
                 "rule": "KO-W003", "severity": "warning", "line": 0,
                 "excerpt": en,

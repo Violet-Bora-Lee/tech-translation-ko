@@ -51,8 +51,16 @@ parentheses). This document explains the why and the edge cases the linter can't
   (분량 정보보다 코드의 의도를 전달)
 - **사용자에게 보이는 문자열은 번역한다.** `alert("promise done!")` → `alert("프라미스 성공!")`,
   `prompt("Which module to load?")` → `prompt("어떤 모듈을 불러오고 싶으세요?")`
-- **에러 메시지는 번역하지 않는다.** `// Error: this is not defined` 유지.
-  본문에서 언급할 땐 '정의되지 않았다(not defined)'처럼 한-영 병기.
+- **에러의 경계선**: 언어·플랫폼이 **생성하는** 에러 출력은 원문을 유지한다
+  (`// Error: this is not defined`). 반면 예제 코드가 **정의하는** 에러 문자열은
+  UI 문자열이므로 번역한다(`throw new Error("Whoops!")` → `throw new Error("에러 발생!")`,
+  실제 교정 커밋에서 약 10회 일괄 적용된 하우스 스타일). 본문에서 실제 에러 출력을
+  언급할 땐 '정의되지 않았다(not defined)'처럼 한-영 병기.
+- **번역한 코드 문자열은 본문 참조와 일치시킨다.** `alert("code finished")`를
+  `"코드 종료"`로 옮겼다면 본문의 `` `code finished` `` 참조도 전부 `` `코드 종료` ``로
+  바꾼다. 반쪽 현지화는 린터가 잡지 못하므로 번역한 문자열을 grep해 확인한다.
+- **화면 문자열은 중의성을 피해 고른다.** 'caught'의 직역 '잡음'은 소음(noise)과
+  충돌하므로 '잡았다!'처럼 문맥 밖에서도 오독되지 않는 표현을 택한다.
 - **식별자·키워드·CSS 값은 절대 건드리지 않는다.** 변수명, 함수명, HTML 속성,
   색상 span(`<span style="color:...">`)의 마크업은 유지하고 감싼 텍스트만 번역.
 - **예시 속 고유명사는 현지화할 수 있다.** "Winnie-the-Pooh" → "이보라"(번역자 이름),

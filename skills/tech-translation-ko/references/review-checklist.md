@@ -41,6 +41,8 @@ what an experienced reviewer actually fixes, ordered by observed frequency.
 
 - [ ] 코드와 설명이 일치하는가. 실제 출력값을 주석에 명시했는가
   (`// true(if 조건문이 끝났어도 변수에 여전히 접근할 수 있음)`).
+- [ ] 번역한 코드 문자열(alert·prompt·Error 인자)을 grep해 본문의 백틱 참조와
+  일치하는지 확인했는가. 린터는 반쪽 현지화를 잡지 못한다.
 - [ ] 좌표·방향·순서처럼 뒤바뀌기 쉬운 쌍(clientX/pageX 류)을 원문과 재대조했는가.
   실제 코퍼스에서도 의미 역전 오역이 발견됐다.
 - [ ] 원문 갱신 대응: 번역 후 원문이 바뀌지 않았는지 diff를 확인한다.
