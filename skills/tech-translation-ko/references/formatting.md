@@ -95,4 +95,4 @@ python3 scripts/check_translation.py translated.md --source original.md --glossa
 ```
 
 error는 전부 수정하고, warning은 문맥을 보고 판단한다. 한국어 맞춤법 검사기
-(부산대 검사기 등)를 마지막에 한 번 돌린다.
+(나라 맞춤법 검사기 https://nara-speller.co.kr/speller/ , 구 부산대 검사기)를 마지막에 한 번 돌린다.

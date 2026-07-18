@@ -61,6 +61,18 @@ python3 scripts/check_translation.py translated.md \
   --source original.md --glossary your-glossary.tsv
 ```
 
+## Real-world case · 실전 사례
+
+This skill has completed a full contribution cycle on the corpus it was distilled from:
+[javascript-tutorial/ko.javascript.info#1899](https://github.com/javascript-tutorial/ko.javascript.info/pull/1899)
+translated the untranslated *Server Sent Events* chapter (271 lines, line-count preserved).
+
+skill로 미번역 챕터 '서버 전송 이벤트'를 번역해 실제 기여 PR까지 올린 사례입니다.
+용어 스캔 → 번역 → 린터(0 error) → 로컬 서버 렌더링 확인 → 수기 퇴고 순서로
+진행했고, 퇴고에서 나온 수정 패턴은 다시 skill에 반영됐습니다
+(`references/sentence-patterns.md`의 '주체·방향·자동성' 패턴,
+`docs/analysis/validation/user_edit_patterns.md`).
+
 ## Methodology · 방법론
 
 The skill was built by mining the translation history, not by writing rules from
