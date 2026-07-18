@@ -94,5 +94,11 @@ parentheses). This document explains the why and the edge cases the linter can't
 python3 scripts/check_translation.py translated.md --source original.md --glossary glossary.tsv
 ```
 
-error는 전부 수정하고, warning은 문맥을 보고 판단한다. 한국어 맞춤법 검사기
-(나라 맞춤법 검사기 https://nara-speller.co.kr/speller/ , 구 부산대 검사기)를 마지막에 한 번 돌린다.
+error는 전부 수정하고, warning은 문맥을 보고 판단한다.
+
+마지막에 나라 맞춤법 검사기(바른한글 https://nara-speller.co.kr/speller/ , 구 부산대
+검사기)를 **반드시 한 번** 돌린다. 실제 교정 코퍼스에서 가장 많이 고쳐진 것이
+맞춤법이다. 단 이 검사기는 대학 연구실이 무료로 운영하므로 **자동화 파이프라인에
+넣지 않는다**. 문서당 1회, 수동으로 실행한다. `scripts/nara_speller.py`가 청크 준비
+(prepare)와 결과 해석(report)을 맡고 API 호출 자체는 브라우저에서 한다. 검사기의
+외래어 순화 제안(커넥션→연결 등)은 STYLE 등급으로 분리되며 용어집 등재어가 우선한다.

@@ -30,8 +30,15 @@ Korean by a skilled technical author — no translationese, no meaning loss.
    python3 scripts/check_translation.py translated.md --source original.md --glossary <glossary.tsv>
    ```
    Fix every `error`. Judge each `warning` in context. Re-run until clean.
-5. **Self-review** with `references/review-checklist.md`, then (if available) run a
-   Korean spell checker as the final pass.
+5. **Self-review** with `references/review-checklist.md`.
+6. **Final spell check — required, but always manual.** Run 나라 맞춤법 검사기(바른한글,
+   https://nara-speller.co.kr/speller/ ) as the last pass — the real correction corpus
+   shows spelling slips survive every earlier step, so do not skip this. However, the
+   service is run free of charge by a university lab and is vulnerable to bot traffic:
+   **never call it automatically** from the translation loop, CI, or scheduled jobs.
+   Run it once per document, by hand (or with the user explicitly initiating it), with
+   throttled requests. `scripts/nara_speller.py` prepares chunks and parses results;
+   the actual API call must happen in a real browser session. See the script docstring.
 
 ## Non-negotiable rules · 즉시 적용 규칙
 
