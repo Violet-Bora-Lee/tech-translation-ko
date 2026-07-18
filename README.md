@@ -20,7 +20,8 @@ skills/tech-translation-ko/
 │   ├── terminology.md        # Terminology decision process + glossary format
 │   ├── formatting.md         # Punctuation, markdown, code comments, captions
 │   ├── review-checklist.md   # Review checklist from 135 correction commits
-│   └── examples.md           # Annotated before/after corpus (CC BY-NC excerpts)
+│   ├── examples.md           # Annotated before/after corpus (CC BY-NC excerpts)
+│   └── kigo-conventions.md   # KIGO standard style guide summary (tense, particles, UI)
 └── scripts/
     ├── check_translation.py  # Deterministic lint: punctuation, structure, glossary
     └── glossary_lookup.py    # Glossary lookup / source-term scan

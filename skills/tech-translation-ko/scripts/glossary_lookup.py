@@ -36,8 +36,9 @@ def cmd_lookup(rows, terms):
 
 def cmd_scan(rows, source):
     text = Path(source).read_text(encoding="utf-8")
-    # 코드블록 제거 후 산문만 검색
-    text = re.sub(r"```.*?```", "", text, flags=re.S)
+    # 코드블록(``` 또는 ~~~ 펜스)·내부 링크 문법 제거 후 산문만 검색
+    text = re.sub(r"^(```|~~~).*?^\1", "", text, flags=re.S | re.M)
+    text = re.sub(r"<info:[^>]*>", "", text)
     found = []
     for en, ko, note in rows:
         if not re.fullmatch(r"[A-Za-z][A-Za-z ().'/,-]*", en):

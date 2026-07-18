@@ -140,7 +140,9 @@ def check_content(lines):
         if re.search(r"[가-힣]{1,6}/[가-힣]{1,6}", text):
             add("KO-E004", no, raw)
 
-        if re.search(r"[다요]\.\s*\([^)]*\)[^.]*$", text):
+        # 마침표+괄호: 괄호 안이 구(마침표로 안 끝남)이면 위반. 괄호 안 완결 문장은 허용
+        m_paren = re.search(r"[다요]\.\s*\(([^)]*)\)", text)
+        if m_paren and not m_paren.group(1).rstrip().endswith("."):
             add("KO-E005", no, raw)
 
         if DOUBLE_PASSIVE.search(text):
@@ -223,6 +225,8 @@ def check_glossary(lines, glossary_path):
             rows.append((cols[0].strip(), cols[1].strip()))
 
     text_all = "\n".join(l for _, _, l, _ in iter_prose_lines(lines))
+    # 튜토리얼 내부 링크 문법(<info:anchor-slug>)은 식별자이므로 검사 제외
+    text_all = re.sub(r"<info:[^>]*>", "<info:X>", text_all)
     # 한-영 병기 구간: 한글 바로 뒤 괄호 안의 원어는 이미 번역된 것이므로 검사 제외
     annotated_spans = [m.span(1) for m in re.finditer(r"[가-힣»)]\(([^)]*)\)", text_all)]
 
