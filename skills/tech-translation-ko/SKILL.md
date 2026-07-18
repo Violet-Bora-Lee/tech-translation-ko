@@ -62,5 +62,8 @@ Both scripts are stdlib-only Python 3.8+.
   markdown structure vs source) and `warning` (review: double passive, translationese,
   glossary deviations). Supports `--format json` for programmatic use.
 - `scripts/glossary_lookup.py` — `lookup <term>` and `scan <file>` over a TSV glossary
-  (`en<TAB>ko<TAB>note`). A 530-term JavaScript-domain glossary ships in
-  `docs/analysis/glossary.tsv` of this repository; bring your own for other domains.
+  (`en<TAB>ko<TAB>note`). This repository ships two glossaries in `docs/analysis/`:
+  `glossary.tsv` (JavaScript-domain, ~520 terms with decision notes) and
+  `glossary-extended.tsv` (AI·quantum·ICT term-translation pairs, 245 entries,
+  source-tagged only — see the license note in that file's README section). Bring
+  your own TSV for other domains; concatenate files if you want both.

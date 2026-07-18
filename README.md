@@ -81,3 +81,12 @@ imagination. See `docs/analysis/` for the full reproducible pipeline:
 Code and documentation are MIT licensed. Example sentence pairs quoted from
 javascript.info / ko.javascript.info are CC BY-NC by Ilya Kantor and contributors —
 see `LICENSE` and per-file attribution notes.
+
+**Glossary data**: `docs/analysis/glossary.tsv` (JavaScript domain) carries decision
+notes from the ko.javascript.info project. `docs/analysis/glossary-extended.tsv`
+(AI · quantum · ICT) contains only English↔Korean term-translation pairs with source
+tags — factual correspondences extracted from published Korean references (2025 AI
+핵심용어, TTA·전자신문 최신 ICT 시사용어 2025, TTA 정보통신용어사전). Definitions were
+deliberately not reproduced. If you plan to redistribute the extended glossary at
+scale, verify usage terms with the respective publishers first
+(see `docs/analysis/research_glossary_sources.md`).
