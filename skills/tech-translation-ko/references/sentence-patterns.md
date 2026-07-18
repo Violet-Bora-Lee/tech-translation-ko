@@ -1,0 +1,121 @@
+# Sentence Patterns · 문장 변환 패턴
+
+The tacit knowledge: how a skilled translator restructures English sentences into
+Korean, extracted from 76 translated documents compared paragraph-by-paragraph with
+their English sources. These are the techniques a glossary and a style guide cannot
+teach. 아래 패턴은 원문·번역 전수 대조에서 추출한 암묵지다.
+
+## 1. Split long sentences · 긴 문장은 나눈다
+
+영어의 관계절·등위접속·후치 수식은 한국어에서 짧은 문장 여러 개로 분해한다.
+
+> Today, JavaScript can execute not only in the browser, but also on the server,
+> or actually on any device that has a special program called the JavaScript engine.
+
+> 자바스크립트는 브라우저뿐만 아니라 서버에서도 실행할 수 있습니다. 이 외에도
+> 자바스크립트 엔진이라 불리는 특별한 프로그램이 들어 있는 모든 디바이스에서도 동작합니다.
+
+- 관계절은 독립 문장으로 뗀다. "objects that can be modified" → "…객체로 나타내줍니다.
+  이 객체는 수정 가능합니다."
+- because절은 별도 문장 + '~때문입니다/~때문이죠'로 후치한다. 결과를 먼저,
+  이유를 뒤에 두는 흐름이 한국어답다.
+- 필요하면 반대로 두 문장을 하나로 합치거나 순서를 뒤집는다. 목적은 리듬이지
+  기계적 분할이 아니다.
+
+## 2. Make enumeration explicit · 열거는 상위 개념을 세워 명시한다
+
+"First, … Second, …" 같은 열거 부사는 무엇의 열거인지 드러나도록 주어구로 승격한다.
+
+> First, we can't dynamically generate any parameters of `import`.
+
+> 첫 번째 제약은 `import`문에 동적 매개변수를 사용할 수 없다는 것이었습니다.
+
+앞 문단에서 '제약사항이 있죠'라고 예고했다면 그 단어('제약')를 받아 결속시키고,
+이미 설명이 끝난 내용을 회고하는 맥락이면 '~것이었습니다' 과거형으로 호응시킨다.
+
+리스트 항목도 같은 원리다. 영어의 생략형 열거("Otherwise, if less than an hour")는
+생략된 주어·목적어를 매 항목 복원해 항목 하나만 읽어도 이해되게 만든다.
+
+## 3. Reorder for Korean information flow · 한국어 정보 흐름으로 재배치
+
+- 후치 수식·괄호 삽입은 관형절로 만들어 표제어 앞에 둔다.
+  "MDN (Mozilla) JavaScript Reference is…" → "Mozilla 재단이 운영하는 **MDN
+  JavaScript Reference**엔…"
+- 문장 끝 부사구("in addition to the language core")는 목적어 앞으로 당긴다.
+- 문장 단위를 넘어 정보 블록 단위로도 재배치한다. 캡처링/버블링 2단계 리스트에
+  숨어 있던 타깃 단계를 독립 항목으로 끌어올려 3단계 구조를 시각화한 사례처럼,
+  원문의 서술 구조보다 개념 구조를 우선한다.
+
+## 4. Drop pronouns, restore referents · 대명사는 지우고 지시 대상은 복원한다
+
+- we/you는 번역하지 않는다. 필요하면 '개발자는' 같은 구체 행위자로 치환한다.
+- it/this/that은 가리키는 대상을 그대로 쓴다. "then it would catch it" →
+  "`.catch`에서 거부된 프라미스를 처리합니다."
+- 존재구문(There may be…)은 주어를 세운다. "There may be 2, 3, 4 or more." →
+  "조절점의 개수는 2개나 3개, 4개가 될 수 있고…"
+
+## 5. Connect the discourse · 문장 사이 논리를 접속어로 드러낸다
+
+영어가 문장을 나란히 두고 독자에게 맡기는 인과·대조를 한국어에선 명시한다.
+
+- But → '그런데', '그럼에도 불구하고', '다만' (앞 문단과의 관계를 보고 고른다)
+- 원문에 없는 담화 마무리를 추가해 질문-답 구조를 닫는다. 앞서 던진 의문을
+  해소한 지점에 "이로써 앞선 의문이 자연스레 해결되었습니다."
+- 전환 문장엔 문서 구조상 위치를 알려주는 메타 정보를 보강한다. "Let's see more
+  details." → "개괄적인 설명은 여기서 마치고 이제 ~을 자세히 살펴봅시다."
+
+## 6. Amplify for the reader · 독자를 위해 보강한다
+
+원문에 없는 내용을 더하는 것은 오역이 아니라 기법이다. 단, 사실 검증이 전제다.
+
+- **추상 서술 → 실제 화면·구체 사실**: "an unknown command" → 실제 콘솔 문구
+  "'lalala'가 정의되지 않았다(not defined)라는 메시지". `bug.html:12` 같은 표기는
+  파일명과 줄 번호의 의미를 쪼개 설명한다.
+- **초심자 배려 조건 신설**: "The developer tools will open on the Console tab." →
+  "개발자 도구를 처음 열어보셨다면 Console 패널이 기본으로 보입니다."
+- **범주 명사 보강**: ECMA-262 설명에 '공식 문서'라는 위상 명사를 추가.
+- **정서적 확장**: 괄호 여담 "(hope it's cached)"를 "어딘가에 이런 리소스들을 캐싱해
+  놓았다면 좋았을 거라는 생각이 드는 순간이네요."로 독립시켜 말을 건다.
+- **옮긴이 주**: 번역 독자에게만 필요한 배경은 "(ECMAScript - 옮긴이)" 형식으로 삽입.
+- 반대로 "Yes, you heard that right." 같은 잉여 구어 삽입구는 삭제한다. 보강과
+  생략은 같은 판단(독자에게 필요한가)의 양면이다.
+
+## 7. Vary the rhythm · 어미와 문형으로 리듬을 만든다
+
+- 본문은 합니다체. 단조로움을 '-죠', '-네요', '-고요'와 청유형('살펴봅시다')으로 깬다.
+  문단에 한 번 정도가 적당하다.
+- 수사적 질문("What's going on?")은 학습 유도형("그 이유에 대해 알아봅시다.")으로
+  재기능화한다.
+- 영어가 같은 구조를 반복하면("two points curve: / three points curve: / four points
+  curve:") 번역은 문형을 셋 다 다르게 쓴다('~살펴봅시다 / ~다음과 같습니다 /
+  ~곡선이 나옵니다').
+- 요약 섹션의 불릿은 한다체·명사형 개조식으로 떨어뜨려도 된다. 한 글 안에서 위치별
+  어미 정책이 달라지는 것은 일관성 위반이 아니다.
+
+## 8. Rewrite headings and titles · 제목은 검색어와 동작 중심으로
+
+- '용어: 설명' 헤딩은 '~로 ~하기' 동작형으로. "innerHTML: the contents" →
+  "innerHTML로 내용 조작하기"
+- 일반명사 제목은 실제 다루는 대상으로 좁힌다. "Debugging in the browser" →
+  "Chrome으로 디버깅하기"
+- 챕터 제목은 직역보다 실제 수록 내용. "Generators, advanced iteration" →
+  "제너레이터와 비동기 이터레이션"
+
+## 9. Localize examples · 예시는 현지화한다
+
+개념 전달과 무관한 문화 레퍼런스는 한국 독자에게 친숙한 것으로 바꾼다.
+
+- 인명: Julius Caesar → Bora Lee, Pete → 지민, Winnie-the-Pooh → 이보라
+- 직함·데이터도 함께: "Consul", "Imperator" → "Software Engineer", "Researcher"
+- 코드 주석·예상 출력·본문 설명까지 예시 전체를 일관되게 바꾼다. 반쪽 현지화가
+  가장 나쁘다.
+- 격언·인용 블록은 같은 기능을 하는 다른 격언으로 대체할 수 있다(author 속성까지).
+  반어 헤더는 한국어 관습으로 재창작한다("Irony detected" → "방금 들어온
+  속보입니다!"). 이 재량은 튜토리얼처럼 어조가 자산인 글에 한한다.
+
+## 10. Know when you're done · 충실과 재량의 경계
+
+- 의미 누락은 허용되지 않는다. 단어-단어 정확성보다 '오역 없음 + 번역투 없음'이 기준이다.
+- 보강·재구성이 원문 뉘앙스를 바꾸는 순간(추상 결론을 특정 관찰로 바꾸다 의미가
+  좁아지는 경우)이 재량의 한계선이다. 확신이 없으면 원문 구조를 유지한다.
+- 모호한 원문은 임의로 해석하지 말고 질문하거나(공동 작업) 원문 수정을 제안한다.

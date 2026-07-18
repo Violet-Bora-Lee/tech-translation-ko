@@ -42,10 +42,16 @@
 - 설명: 원문에 없는 '공식 문서'라는 범주 명사를 보강해 ECMA-262의 위상을 명시한다. 이어지는 문장에서도 'ECMA-262 명세서'로 주어를 반복 명시(패턴 C의 반대 방향 보강)해 지시 대상을 분명히 한다.
 
 ### [H] 캐릭터·프레임을 강화하는 보강 (ninja 문서 전반)
-- 원문: Make a pact with fellow ninjas of the team
+- 원문: Let an unfamiliar reader think well over similarly named function `printMessage`
 - 번역: 유지보수를 담당한 지 얼마 안 된 개발자가 코드를 곱씹을 수 있도록 여러 곳에 훈련 장치를 배치해 놓아야 합니다.
-- 위치: 03-code-quality/04-ninja-code/article.md:129 외 다수(:53, :129, :216)
-- 설명: 원문의 반어적 조언을 '훈련/훈련 장치/극기 훈련' 같은 은유로 반복 보강해 닌자 프레임을 한국어 독자에게 더 선명하게 전달한다. 원문에 없는 문장('회사에서 당신의 입지는 더 넓어지겠죠' :216)을 추가하기도 한다. 관찰 6회.
+- 위치: 03-code-quality/04-ninja-code/article.md:129 (원문 en:123)
+- 설명: 원문에 없는 '유지보수를 담당한 지 얼마 안 된 개발자', '훈련 장치를 배치'를 보강해 닌자 프레임을 한국어 독자에게 더 선명하게 전달한다. 문서 전반에서 '훈련/극기 훈련' 은유를 반복 삽입하고(:53, :165), 원문에 없는 문장('회사에서 당신의 입지는 더 넓어지겠죠' :216)을 추가하기도 한다. 관찰 6회.
+
+### [H] 자명한 추론 문장을 통째로 압축하는 편집적 생략
+- 원문: No difference! In both cases, `return confirm('Did parents allow you?')` executes exactly when the `if` condition is falsy.
+- 번역: 동일하게 동작합니다.
+- 위치: 02-first-steps/15-function-basics/1-if-else-required/solution.md:1
+- 설명: 결론 + 근거 두 문장을 한 어절 결론으로 압축해 버렸다. 코드가 바로 위에 노출된 짧은 solution에서는 근거 설명이 군더더기라 판단해 과감히 삭제한 편집적 생략. 이 청크에서 가장 극적인 생략 사례.
 
 ### [H] 원문 군더더기·중복 표현 생략
 - 원문: Novice developers sometimes use them even better than programmer ninjas.
@@ -69,11 +75,13 @@
 - 위치: 04-ninja-code/article.md:18-20
 - 설명: 'Irony detected'를 '방금 들어온 속보입니다!'로 바꾸고 본문도 뉴스 앵커 어투('~라는 소식입니다')로 재창작해 반어 톤을 한국어 관습으로 옮겼다. 'ninja'에 '무림 고수' 비유를 얹어 문화적 등가물을 보강.
 
-### [J] 원문에 없는 이미지 확장자·정보 갱신
+### [J] 이미지 확장자 등 로컬 자산 맞춤 교체
 - 원문: ![chrome](chrome.webp)
 - 번역: ![chrome](chrome.png)
 - 위치: 4-devtools/article.md:25
-- 설명: 이미지 확장자를 webp→png로 교체(로컬 저장소 자산에 맞춤). 엔진 코드네임 목록(:29)도 원문의 Chakra/JavaScriptCore/Nitro 나열을 IE의 Trident/Chakra, Edge의 ChakraCore, Safari의 SquirrelFish로 재구성해 정보를 갱신·현지화했다.
+- 설명: 이미지 확장자를 webp→png로 교체해 로컬 저장소 자산에 맞췄다. 번역자의 의도적 현지화 선택으로 볼 수 있는 실제 편집.
+
+> 주의(기법 아님 — 버전 드리프트): 엔진 코드네임 목록(:29, 원문 en은 V8에 Edge 포함·Chakra/JavaScriptCore/Nitro 나열, ko는 Trident/ChakraCore/SquirrelFish로 재편)과 intro의 transpile 언어 목록에서 Brython·Kotlin 누락(:112~114)은 번역 기법이 아니라 ko가 더 오래된 en 판본을 따라간 원본 버전 차이일 공산이 크다. 패턴 추출 대상에서 제외한다.
 
 ---
 
