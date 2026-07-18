@@ -38,7 +38,21 @@ RULES_DOC = {
     "KO-W006": "'만약' 관용 점검(뒤따르는 '-면'이 있으면 생략 가능)",
     "KO-W007": "명사 종결 문장 뒤 마침표 의심(리스트 항목)",
     "KO-W008": "큰따옴표 강조 의심(직접 인용이 아니면 작은따옴표)",
+    "KO-E006": "자주 틀리는 말(KIGO): 그리고 나서→그러고 나서, 몇 일→며칠 등",
+    "KO-W009": "격조사 '~의' 연속 사용 의심(KIGO)",
+    "KO-W010": "미래 시제 직역 의심: '~할 것입니다'는 현재형 권장(KIGO)",
+    "KO-W011": "숫자와 단위 사이 공백 의심: IT 분야는 붙여 씀(KIGO)",
 }
+
+# KIGO 자주 틀리는 말: (오류 정규식, 교정)
+KIGO_MISSPELL = [
+    (r"그리고 나서", "그러고 나서"),
+    (r"몇 ?일(?= [동안이후뒤])|몇일", "며칠"),
+    (r"하므로써", "함으로써"),
+    (r"삼가하", "삼가"),
+    (r"잠궈|잠구", "잠가/잠그"),
+    (r"예/아니오", "예/아니요"),
+]
 
 # 번역투 패턴: (정규식, 제안)
 TRANSLATIONESE = [
@@ -150,6 +164,20 @@ def check_content(lines):
 
         if re.search(r"[\"“][가-힣][^\"”]{0,20}[\"”]", text) and not re.search(r"(말했|물었|답했|라고)", text):
             add("KO-W008", no, raw)
+
+        for pat, correction in KIGO_MISSPELL:
+            if re.search(pat, text):
+                add("KO-E006", no, raw, f"→ {correction}")
+
+        if re.search(r"[가-힣]+의\s+[가-힣]+의\s", text):
+            add("KO-W009", no, raw)
+
+        m_fut = re.search(r"([가-힣])\s?것입니다", text)
+        if m_fut and (ord(m_fut.group(1)) - 0xAC00) % 28 == 8:  # 받침이 ㄹ인 관형형
+            add("KO-W010", no, raw)
+
+        if re.search(r"\d[\d,.]*\s+(kg|km|cm|mm|ms|kb|mb|gb|tb|mbps|gbps|바이트|비트|픽셀)(?![A-Za-z0-9])", text, re.IGNORECASE):
+            add("KO-W011", no, raw)
 
     return findings
 

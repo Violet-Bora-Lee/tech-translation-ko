@@ -52,6 +52,7 @@ Korean by a skilled technical author — no translationese, no meaning loss.
 | `references/formatting.md` | 문장부호·마크다운·코드 요소 처리 |
 | `references/review-checklist.md` | 번역 후 자기 검수 |
 | `references/examples.md` | 패턴이 감이 안 올 때 실제 대조 사례 |
+| `references/kigo-conventions.md` | 시제·조사·외래어 표기 세칙·숫자·UI 현지화(KIGO 표준) |
 
 ## Scripts
 
