@@ -39,6 +39,9 @@ Korean by a skilled technical author — no translationese, no meaning loss.
    Run it once per document, by hand (or with the user explicitly initiating it), with
    throttled requests. `scripts/nara_speller.py` prepares chunks and parses results;
    the actual API call must happen in a real browser session. See the script docstring.
+   If 바른한글 is down, fall back to the Daum grammar checker with
+   `python3 scripts/nara_speller.py daum translated.md` (direct call, same manual-only
+   etiquette).
 
 ## Non-negotiable rules · 즉시 적용 규칙
 

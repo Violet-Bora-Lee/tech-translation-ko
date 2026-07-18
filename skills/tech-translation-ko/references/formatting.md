@@ -102,3 +102,7 @@ error는 전부 수정하고, warning은 문맥을 보고 판단한다.
 넣지 않는다**. 문서당 1회, 수동으로 실행한다. `scripts/nara_speller.py`가 청크 준비
 (prepare)와 결과 해석(report)을 맡고 API 호출 자체는 브라우저에서 한다. 검사기의
 외래어 순화 제안(커넥션→연결 등)은 STYLE 등급으로 분리되며 용어집 등재어가 우선한다.
+
+바른한글이 다운 등으로 응답하지 않으면 다음(카카오) 맞춤법 검사기로 폴백한다.
+`python3 scripts/nara_speller.py daum translated.md` 한 번이면 되고(직접 호출 지원),
+수동 실행·문서당 1회 원칙은 동일하게 지킨다.

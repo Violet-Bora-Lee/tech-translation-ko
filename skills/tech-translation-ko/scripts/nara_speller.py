@@ -13,6 +13,7 @@ Usage:
     python3 nara_speller.py prepare TRANSLATED.md > payload.json
     (브라우저에서 payload.json의 각 청크를 /api/check 로 전송해 results.json 저장)
     python3 nara_speller.py report TRANSLATED.md results.json
+    python3 nara_speller.py daum TRANSLATED.md     # 바른한글 다운 시 폴백(직접 호출)
 
 prepare: 마크다운에서 산문(코드블록 밖 + 코드 내 한글 주석)만 추출해
          검사기 요청 단위(기본 700자)로 청크를 만든다. 각 청크에 원본 줄 번호
@@ -131,6 +132,54 @@ def cmd_report(path, results_path):
     sys.exit(1 if findings else 0)
 
 
+def cmd_daum(path):
+    """다음(카카오) 맞춤법 검사기 폴백. 바른한글이 응답하지 않을 때만 쓴다.
+
+    브라우저 없이 직접 호출이 가능하지만 같은 이용 예절을 지킨다.
+    수동 실행 전용, 문서당 1회, 요청 사이 1초 지연."""
+    import time
+    import urllib.parse
+    import urllib.request
+
+    lines = Path(path).read_text(encoding="utf-8").splitlines()
+    chunks, cur_texts, cur_lines, cur_len = [], [], [], 0
+    for no, text in prose_lines(lines):
+        if cur_len + len(text) + 1 > CHUNK_LIMIT and cur_texts:
+            chunks.append(("\n".join(cur_texts), cur_lines))
+            cur_texts, cur_lines, cur_len = [], [], 0
+        start = cur_len + (1 if cur_texts else 0)
+        cur_texts.append(text)
+        cur_len = start + len(text)
+        cur_lines.append([no, start, cur_len])
+    if cur_texts:
+        chunks.append(("\n".join(cur_texts), cur_lines))
+
+    findings = 0
+    attr = re.compile(
+        r'data-error-input="([^"]*)"[^>]*data-error-output="([^"]*)"', re.S)
+    for text, line_map in chunks:
+        data = urllib.parse.urlencode({"sentence": text}).encode()
+        req = urllib.request.Request(
+            "https://dic.daum.net/grammar_checker.do", data=data,
+            headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"})
+        try:
+            html = urllib.request.urlopen(req, timeout=20).read().decode("utf-8")
+        except Exception as exc:  # noqa: BLE001
+            print(f"다음 검사기 호출 실패: {exc}", file=sys.stderr)
+            sys.exit(2)
+        for org, cand in attr.findall(html):
+            org, cand = org.strip(), cand.strip()
+            if not org or org == cand or not re.search(r"[가-힣]", org):
+                continue
+            pos = text.find(org)
+            line_no = next((ln for ln, s, e in line_map if s <= pos < e), "?") if pos >= 0 else "?"
+            print(f"SPELL   {path}:{line_no}  {org} → {cand}")
+            findings += 1
+        time.sleep(1)
+    print(f"\n{findings}건의 교정 후보 (다음 검사기 기준)")
+    sys.exit(1 if findings else 0)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -139,9 +188,13 @@ def main():
     p2 = sub.add_parser("report")
     p2.add_argument("file")
     p2.add_argument("results")
+    p3 = sub.add_parser("daum")
+    p3.add_argument("file")
     args = ap.parse_args()
     if args.cmd == "prepare":
         cmd_prepare(args.file)
+    elif args.cmd == "daum":
+        cmd_daum(args.file)
     else:
         cmd_report(args.file, args.results)
 
