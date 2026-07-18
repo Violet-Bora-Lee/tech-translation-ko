@@ -12,9 +12,15 @@ When you meet a term, resolve it in this order. 아래 순서로 판단한다.
 2. **If absent, consult authorities in this order.** 용어집에 없으면 아래 우선순위로 근거를 찾는다.
    1. 해당 분야의 출판된 번역서(예: JS라면 모던 자바스크립트 Deep Dive, 러닝 자바스크립트 등)
    2. MDN 한국어 문서 등 권위 있는 공식 문서 번역
-   3. 마이크로소프트 Language Portal Terminology Search
-   4. 국립국어원 외래어 표기법 용례(음차 표기 결정: 스로틀·섬네일·다이내믹·아키텍처)
-   5. 한글라이즈(위에 없을 때 음차 표기)
+   3. TTA 정보통신용어사전(terms.tta.or.kr). 한·영 병기 공식 사전으로 양자·보안·AI·
+      클라우드 등 최신 분야까지 수록. 개별 조회용이며 저작권상 대량 수집은 금지
+   4. 마이크로소프트 Language Portal Terminology Search
+   5. 국립국어원 외래어 표기법 용례(음차 표기 결정: 스로틀·섬네일·다이내믹·아키텍처)와
+      다듬은 말 목록(공공누리. 단 순화어라 업계 통용 표기와 다를 수 있음)
+   6. 한글라이즈(위에 없을 때 음차 표기)
+
+   최신 분야 참조처 상세와 라이선스 조건은 이 저장소
+   `docs/analysis/research_glossary_sources.md` 참고.
 3. **Register the decision.** 새 용어는 용어집에 등재하고 나서 번역한다. 번역어를 나중에
    바꾸면 '기존 X에서 Y로 변경'과 근거를 이력으로 남긴다.
 4. **Reality overrides authority.** 근거 있는 역어라도 실제 문장에 넣어 보고 의미가 와닿지
