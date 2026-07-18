@@ -42,6 +42,8 @@ RULES_DOC = {
     "KO-W009": "격조사 '~의' 연속 사용 의심(KIGO)",
     "KO-W010": "미래 시제 직역 의심: '~할 것입니다'는 현재형 권장(KIGO)",
     "KO-W011": "숫자와 단위 사이 공백 의심: IT 분야는 붙여 씀(KIGO)",
+    "KO-W012": "의존 명사 '때' 붙여쓰기 의심: 보낼때 → 보낼 때",
+    "KO-W013": "'중' 붙여쓰기 의심: 실행중 → 실행 중",
 }
 
 # KIGO 자주 틀리는 말: (오류 정규식, 교정)
@@ -180,6 +182,16 @@ def check_content(lines):
 
         if re.search(r"\d[\d,.]*\s+(kg|km|cm|mm|ms|kb|mb|gb|tb|mbps|gbps|바이트|비트|픽셀)(?![A-Za-z0-9])", text, re.IGNORECASE):
             add("KO-W011", no, raw)
+
+        # 관형형(받침 ㄹ) + '때' 붙여쓰기. 이때·그때·한때·접때 같은 합성어는 제외
+        for m_ttae in re.finditer(r"([가-힣])때", text):
+            ch = m_ttae.group(1)
+            if ch not in "이그한접저요" and (ord(ch) - 0xAC00) % 28 == 8:
+                add("KO-W012", no, raw)
+                break
+
+        if re.search(r"(실행|진행|사용|로딩|연결|처리|작업|대기|접속|다운로드|업로드)중(?![요앙심])", text):
+            add("KO-W013", no, raw)
 
     return findings
 
