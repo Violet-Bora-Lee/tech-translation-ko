@@ -46,6 +46,7 @@ RULES_DOC = {
     "KO-W013": "'중' 붙여쓰기 의심: 실행중 → 실행 중",
     "KO-W014": "'것' 준말 붙여쓰기 의심: 있을겁니다 → 있을 겁니다",
     "KO-W015": "의존 명사 '것·게·가지' 붙여쓰기 의심: 닫는것을 → 닫는 것을, 사용하는게 → 사용하는 게, 몇가지 → 몇 가지",
+    "KO-W016": "smart/warn 블록 header 속성값 끝에 마침표 사용(헤딩 마침표 금지 규칙과 동일)",
 }
 
 # KIGO 자주 틀리는 말: (오류 정규식, 교정)
@@ -121,6 +122,11 @@ def check_content(lines):
             "excerpt": excerpt.strip()[:120],
             "message": RULES_DOC[rule] + (f" ({note})" if note else ""),
         })
+
+    # 펜스 줄은 산문 루프에서 제외되므로 header 속성 마침표는 전체 줄에서 검사한다
+    for no, raw in enumerate(lines, 1):
+        if re.search(r'^```\w+.*header="[^"]*\."', raw):
+            add("KO-W016", no, raw)
 
     for no, raw, text, is_comment in iter_prose_lines(lines):
         if not is_hangul_text(text):
@@ -204,6 +210,7 @@ def check_content(lines):
         # 관형형(는·은·을·던)+'것/게', '몇가지' 붙여쓰기
         if re.search(r"[가-힣](?:는|은|을|던)(?:것|게)|몇가지", text):
             add("KO-W015", no, raw)
+
 
     return findings
 

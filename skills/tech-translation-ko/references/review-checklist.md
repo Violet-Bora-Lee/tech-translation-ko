@@ -6,6 +6,13 @@ what an experienced reviewer actually fixes, ordered by observed frequency.
 
 린터(`check_translation.py`)가 잡는 항목은 (lint) 표시. 나머지는 사람·LLM 판단 영역이다.
 
+## 0th pass — 원문 최신본 확인 (번역 시작 전)
+
+- [ ] 로컬 스냅샷이 upstream 원문 최신본과 같은가. 다르면 최신본 기준으로 번역한다.
+  Blob 번역 때 로컬 스냅샷은 `FileReader` 기반이었지만 upstream은 이미
+  `blob.arrayBuffer()`·스트림 섹션으로 바뀌어 있었다(번역자가 내용의 어색함으로
+  감지). `diff <로컬 원문> <upstream 원문>` 한 번이면 된다.
+
 ## 1st pass — 기계 검사 (린터 실행)
 
 - [ ] em-dash, 문장 끝 쌍점, 헤딩 문장부호, 괄호·마침표 위치 (lint: error)
