@@ -9,10 +9,22 @@ multi-reviewer workflow, a 500+ term glossary, and a written style guide).
 이끈 번역자의 문서 76편(원문·번역 대조)과 교정 커밋 135건, 운영 용어집·스타일 가이드를
 분석해 명문화된 규칙과 암묵지를 추출했습니다.
 
+## Two skills · 두 가지 스킬
+
+이 저장소는 같은 기법을 공유하는 스킬 두 개를 제공합니다.
+
+| Skill | 용도 |
+|---|---|
+| `skills/tech-translation-ko` | **javascript.info 기여용.** 줄 수 보존 계약, JS 도메인 용어집, 하우스 스타일(예제 인명 현지화, 에러 문자열 치환 등)이 포함됩니다. |
+| `skills/it-docs-translation-ko` | **범용 IT 문서 번역용.** README·API 레퍼런스·릴리스 노트·매뉴얼·기술 블로그 등 모든 영→한 IT 문서에 씁니다. 도메인 전용 계약·하우스 스타일을 걷어내고 용어집은 프로젝트별로 연결합니다(bring your own glossary). |
+
+javascript.info에 기여한다면 전자를, 그 외 모든 번역엔 후자를 설치하세요.
+
 ## What's inside · 구성
 
 ```
-skills/tech-translation-ko/
+skills/tech-translation-ko/        # javascript.info 특화 (아래 구조)
+skills/it-docs-translation-ko/     # 범용판 (같은 구조, 도메인 중립 내용)
 ├── SKILL.md                  # Entry point — workflow and core principles
 ├── references/
 │   ├── principles.md         # Translation philosophy and priorities
@@ -39,16 +51,20 @@ machines can't judge — sentence flow, naturalness, meaning preservation.
 ### Claude Code
 
 ```bash
-# Personal (all projects)
-git clone https://github.com/Violet-Bora-Lee/tech-translation-ko \
-  && cp -r tech-translation-ko/skills/tech-translation-ko ~/.claude/skills/
+git clone https://github.com/Violet-Bora-Lee/tech-translation-ko
 
-# Or per-project
-cp -r tech-translation-ko/skills/tech-translation-ko .claude/skills/
+# General-purpose IT docs skill (recommended for most users)
+cp -r tech-translation-ko/skills/it-docs-translation-ko ~/.claude/skills/
+
+# javascript.info contribution skill
+cp -r tech-translation-ko/skills/tech-translation-ko ~/.claude/skills/
+
+# Or per-project: copy into .claude/skills/ instead
 ```
 
 Then ask Claude to translate an English document to Korean — the skill activates
-automatically, or invoke it explicitly with `/tech-translation-ko`.
+automatically, or invoke it explicitly with `/it-docs-translation-ko`
+(or `/tech-translation-ko`).
 
 ### Any LLM · 범용 LLM
 
