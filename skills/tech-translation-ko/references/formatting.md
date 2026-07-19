@@ -84,6 +84,15 @@ parentheses). This document explains the why and the edge cases the linter can't
   (도덕경 인용 → '어두운 방에서 검은 고양이 찾기' 격언, author 속성까지 교체).
   단 이는 튜토리얼처럼 어조가 자산인 글에서의 재량이다. 명세·API 문서에선 직역한다.
 
+## Translator's notes · 역주 형식
+
+원문에 없는 보충을 넣을 땐 역주임을 표시한다(2026-07-19 검수 세션에서 굳은 형식).
+
+- 형식은 `(...부가설명... - 옮긴이)`. 붙임표(-) 앞뒤 공백을 지킨다.
+- 역주 안에서도 API·코드 식별자엔 백틱을 적용한다.
+- 한 문서 안에서 역주 표기를 통일한다. 검수 때 `옮긴이`로 grep해 형식 편차를 확인한다.
+- 무엇을 역주로 다루는지는 sentence-patterns.md 6번(옮긴이 주) 참고.
+
 ## Captions and images · 캡션·이미지
 
 - 이미지 캡션의 명사구+쌍점 라벨은 완결 문장으로 바꾼다.
